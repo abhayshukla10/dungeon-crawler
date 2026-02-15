@@ -25,6 +25,14 @@ public class Player extends Character {
         this.experience = 0;
         this.experienceToNextLevel = 100;
         this.inventory = new ArrayList<>();
+            
+    public String getStatus() {
+        String status = name + " (HP: " + health + "/" + maxHealth + ", Level: " + level + ")";
+        if (!isAlive()) {
+            status += " [DEAD]";
+        }
+        return status;
+    }
     }
 
     // BOOLEAN & IF STATEMENTS: combat and validation
@@ -122,5 +130,13 @@ public class Player extends Character {
         System.out.println("║ HP: " + String.format("%-14d", health) + "║");
         System.out.println("║ Score: " + String.format("%-11d", score) + "║");
         System.out.println("╚════════════════════╝");
+    }
+
+    public String getStatus() {
+        String status = name + " (HP: " + health + "/" + maxHealth + ", Level: " + level + ")";
+        if (!isAlive()) {
+            status += " [DEAD]";
+        }
+        return status;
     }
 }
